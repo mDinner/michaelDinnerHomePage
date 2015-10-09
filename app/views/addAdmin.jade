@@ -1,0 +1,16 @@
+block content
+	link(rel="stylesheet" type="text/css" href="/css/global.css")
+	link(rel="stylesheet" type="text/css" href="/css/bootstrap.min.css")
+	h2 Add Admin
+	form(id="createAdmin" action="/adminData/allAdmins" method="post" accept-charset="utf-8" ajax="true")
+		input(class="input" type="text" name="fname" placeholder="First Name")
+		input(class="input" type="text" name="lname" placeholder="Last Name")
+		input(class="input" type="text" name="email" placeholder="Email")
+		input(class="input" type="text" name="password" placeholder="Password")
+		input(class="input" type="text" name="type" placeholder="Type")
+		input(class="input" type="date" name="birthday")
+		br
+		input(type="submit" value="Create Admin")
+		script(src="/js/jquery-1.11.3.min.js")
+		script(src="/js/js.js")
+			script(src="/js/createAdmin.js")

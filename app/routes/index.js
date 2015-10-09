@@ -5,7 +5,11 @@ exports = module.exports = function( router, Admin ){
 	});
 
 	router.get('/admin', function(req, res) {
-		res.render('admin');
+		res.render('adminindex');
+	});
+
+	router.get('/addAdmin', function(req, res) {
+		res.render('addAdmin');
 	});
 	
 
@@ -32,5 +36,32 @@ exports = module.exports = function( router, Admin ){
 				res.json({ message: 'Admin Created!'});
 			});
 	});
+
+
+	router.route('/editAdmin/:admin_id')
+	.get(function(req, res) {
+		Admin.findById(req.params.admin_id, function(err, admin) {
+			if (err){
+				res.send(err);
+			}
+	  		res.render('editAdmin');
+		});
+	}).put(function(req, res) {
+	// find the post
+		Admin.findById(req.params.post_id, function(err, admn) {	
+			if (err){
+				res.send(err)
+			}
+			admn.title = req.body.title;
+			admn.content = req.body.content; 	// update the admns info
+			admn.save(function(err) {			// save the post
+				if (err){res.send(err);}
+				res.render('adminindex');
+			});
+		});
+	});
+
+
+
 
 }
