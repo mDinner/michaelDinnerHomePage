@@ -22,7 +22,6 @@ $(document).ready(function(){
    });
 
  $("#delete-admin-form").submit(function(e) {
-    console.log('submit fired');
     e.preventDefault();
 
     var form_data = $(this).serialize();

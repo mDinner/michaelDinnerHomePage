@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var MessagesSchema = new mongoose.Schema({
 	content: String,
 	sender: { type: String, default: ''},

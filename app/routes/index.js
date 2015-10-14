@@ -4,6 +4,13 @@ exports = module.exports = function( router, Admin, Messages ){
 		res.render('index');
 	});
 
+
+
+	router.route('/')
+	.get(function(req, res){
+		res.render('index');
+	});
+
 	router.get('/admin', function(req, res) {
 		res.render('adminindex');
 	});
@@ -30,13 +37,13 @@ exports = module.exports = function( router, Admin, Messages ){
 
 
 	router.route('/adminData/allAdmins')
-		.get(function(req, res) {
-			Admin.find(function(err, admins) {
-			if (err){
-				res.send(err);	
-			}else{
-				res.json(admins);	
-			}
+	.get(function(req, res) {
+		Admin.find(function(err, admins) {
+		if (err){
+			res.send(err);	
+		}else{
+			res.json(admins);	
+		}
 
 		});
 	}).post(function(req, res) {

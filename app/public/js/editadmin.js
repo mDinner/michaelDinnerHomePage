@@ -23,7 +23,7 @@
 		var name = $(n).val();
 		// var namePlaceholder = $(n).attr('placeholder');
 		// if(name == ""){
-		// 	name = namePlaceholder == "No Name" ? "" : namePlaceholder;
+		 	name = namePlaceholder == "No Name" ? "" : namePlaceholder;
 		// }
 
 
