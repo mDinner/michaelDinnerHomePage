@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var path 	   = require('path');
 
-var Admin  = require('./app/models/admin.js');
+
 
 // app config
 app.use(bodyParser());
@@ -14,7 +14,9 @@ app.use(express.static(__dirname + '/app/public'));
 
 // route section
 var router = express.Router(); 
-require( './app/routes' )( router, Admin );
+var Admin  = require('./app/models/admin.js');
+var Messages  = require('./app/models/adminMessages.js');
+require( './app/routes' )( router, Admin, Messages );
 app.use(router);
 
 mongoose.connect('mongodb://localhost/test');

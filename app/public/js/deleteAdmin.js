@@ -4,7 +4,6 @@ $(document).ready(function(){
 	var pathi = path.split("/");   //         ['localhost:8000', editAdmin, 56158fd5f951a4a70f023886]
 	var path = '/' + pathi[1] + '/' + pathi[2];
 	var deletePath = 'http://localhost:8000/adminData/admin/' + pathi[2];
-  alert(deletePath); 
 
   $('#delete-admin-form').attr('action', deletePath);
 

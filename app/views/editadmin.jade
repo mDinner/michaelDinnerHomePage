@@ -1,9 +1,7 @@
 block content
 	link(rel="stylesheet" type="text/css" href="/css/global.css")
 	link(rel="stylesheet" type="text/css" href="/css/bootstrap.min.css")
-	h2 Admin Profile
-	a(href="/deleteAdmin/:admin_id" class="delete-link")
-		h3 Delete Admin
+	h2 Edit Admin
 	form(id="editAdmin" action="/editAdmin/:admin_id" method="put" accept-charset="utf-8" ajax="true")
 		input(class="input" type="text" name="fname" placeholder="First Name")
 		input(class="input" type="text" name="lname" placeholder="Last Name")
@@ -12,7 +10,9 @@ block content
 		input(class="input" type="text" name="type" placeholder="Type")
 		input(class="input" type="date" name="birthday")
 		br
-		input(type="submit" value="Create Admin")
-		script(src="/js/jquery-1.11.3.min.js")
-		script(src="/js/js.js")
-		script(src="/js/editAdmin.js")
+		input(type="submit" value="Edit Admin")
+	a(href="/deleteAdmin/:admin_id" class="delete-link")
+		h3 Delete Admin
+	script(src="/js/jquery-1.11.3.min.js")
+	script(src="/js/js.js")
+	script(src="/js/editAdmin.js")

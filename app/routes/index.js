@@ -1,4 +1,4 @@
-exports = module.exports = function( router, Admin ){
+exports = module.exports = function( router, Admin, Messages ){
 	
 	router.get('/', function(req, res) {
 		res.render('index');
@@ -58,6 +58,9 @@ exports = module.exports = function( router, Admin ){
 		res.render('addAdmin');
 	});
 
+	router.get('/', function(req, res) {
+		res.render('addAdmin');
+	});
 
 	router.get('/deleteAdmin/:admin_id', function(req, res) {
 		res.render('deleteAdmin');

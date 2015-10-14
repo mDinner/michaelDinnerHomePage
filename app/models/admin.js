@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var MessagesSchema = require('./adminMessages.js');
 
 var AdminSchema = new mongoose.Schema({
 	email: String,
@@ -6,7 +7,11 @@ var AdminSchema = new mongoose.Schema({
 	type: { type: String, default: ''},
 	fname: { type: String, default: ''},
 	lname: { type: String, default: ''},
-	birthday: Date
+	birthday: Date,
+	messages: [MessagesSchema]
 });
 
 module.exports = mongoose.model('Admin', AdminSchema);
+
+
+
