@@ -2,6 +2,8 @@
 	var path = window.location.pathname;  //  localhost:8000/editAdmin/56158fd5f951a4a70f023886
 	var pathi = path.split("/");   //         ['localhost:8000', editAdmin, 56158fd5f951a4a70f023886]
 	var path = pathi[1] + pathi[2];
+	var deletePath = pathi[0] + '/deleteAdmin/' + pathi[2];
+	$('.delete-link').attr('href', deletePath);
 	// (function(){
 
 	// 	$.ajax({
